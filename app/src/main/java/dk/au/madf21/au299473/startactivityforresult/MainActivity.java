@@ -34,7 +34,9 @@ public class MainActivity extends ComponentActivity {
         findViewById(R.id.goToOtherActivityButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mStartActivity.launch(new Intent(MainActivity.this, OtherActivity.class));
+                Intent intent = new Intent(MainActivity.this, OtherActivity.class);
+                intent.putExtra("data", "Data from MainActivity");
+                mStartActivity.launch(intent);
             }
         });
     }
